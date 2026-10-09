@@ -1,5 +1,7 @@
 # Switchyard technical walkthrough
 
+[English](walkthrough.md) | [日本語](walkthrough.ja.md)
+
 Switchyard processes synthetic creative assets through validation, provider review, human approval and local delivery. Atlas and Cedar return deterministic fixtures; no live model is called.
 
 ## Processing flow

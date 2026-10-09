@@ -27,7 +27,7 @@ For development, start `npm run server -- --dev` and `npm run dev` in separate t
 3. **Load input version 2.** Motion changes from 6 to 8 seconds. The server removes approval and blocks delivery until the new input is approved.
 4. Create **Recoverable outage**, inspect `unavailable`, then **Retry review**. Recovery is a documented deterministic scenario.
 
-Timeout, invalid response and refusal can also be selected. Refusal stops routing and has no retry bypass. See [the architecture and trade-offs](docs/architecture.md), [contract](docs/contract.md), and [technical walkthrough](docs/walkthrough.md).
+Timeout, invalid response and refusal can also be selected. Refusal stops routing and has no retry bypass. See [the architecture and trade-offs](docs/architecture.md), [contract](docs/contract.md), and [technical walkthrough](docs/walkthrough.md) ([日本語](docs/walkthrough.ja.md)).
 
 ## Verify
 
