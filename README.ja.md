@@ -38,7 +38,7 @@ npm run test:e2e       # ビルド済みアプリで5つのブラウザー操作
 npm run demo          # 実際に実行した9件の記録を .data/demo-cases.jsonl に出力
 ```
 
-アプリを起動するだけなら、テスト用ブラウザーのインストールは不要です。このMacでは `CHROMIUM_EXECUTABLE_PATH` で既存のキャッシュ済みChromiumを指定して検証しました。CIの設定では、Playwrightに対応するブラウザーをCI実行環境に導入します。2026年10月9日、Ubuntu上のNode 22.17.0・24で[GitHub Actions](https://github.com/domizo/switchyard/actions/runs/37884056652)が成功しました。各バージョンで単体・結合テスト37件とブラウザー操作5件が通り、スキーマの差分検査も成功しています。[検証記録](docs/verification.md)では、ローカルとリモートCIの結果を区別しています。
+アプリを起動するだけなら、テスト用ブラウザーのインストールは不要です。このMacでは `CHROMIUM_EXECUTABLE_PATH` で既存のキャッシュ済みChromiumを指定して検証しました。CIの設定では、Playwrightに対応するブラウザーをCI実行環境に導入します。2026年10月9日、Ubuntu上のNode 22.17.0・24で[GitHub Actions](https://github.com/domizo/switchyard/actions/runs/37888537230)が成功しました。各バージョンで単体・結合テスト37件とブラウザー操作5件が通り、スキーマの差分検査も成功しています。[検証記録](docs/verification.md)では、ローカルとリモートCIの結果を区別しています。
 
 独立したFieldcheckのチェックアウトで、新しい実行記録を検査する場合：
 
@@ -57,4 +57,4 @@ python3 -m fieldcheck fixtures/baseline.jsonl
 
 **未実装または未検証：** 実際のAIプロバイダーとの接続、複数ユーザーの認証、クラウド実行、GCP・iOS連携、分散ワーカー、停電時の永続性、すべての支援技術でのアクセシビリティ、負荷試験、本番運用です。範囲を限定したデモであり、本番環境にそのまま導入できると主張するものではありません。
 
-プロジェクトのライセンスは未選択です。
+[MITライセンス](LICENSE)を適用しています。依存パッケージには、それぞれのライセンスが適用されます。

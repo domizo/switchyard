@@ -43,7 +43,7 @@ Intentional functional deviations: only actual created runs appear, avoiding the
 
 ## Remote CI on 2026-10-09
 
-[GitHub Actions run 37884056652](https://github.com/domizo/switchyard/actions/runs/37884056652) passed for implementation commit `da29a9c3387b2fdea331f7f79999104865d49b27`. The private repository is owned by `domizo`. Its published tree `cf86a190f4705b49e85f846d4dace7e18ff493f5` exactly matched the verified local checkout, including both language READMEs; remote commits are a fresh, disclosed import rather than copied local history.
+[GitHub Actions run 37888537230](https://github.com/domizo/switchyard/actions/runs/37888537230) passed for commit `46c048bb2b2c6be2c791ba3bdf663ef67ce68da9` on 2026-10-09. The repository is owned by `domizo` and remains private. This records the verified source revision; subsequent documentation or license changes require their own [workflow run](https://github.com/domizo/switchyard/actions/workflows/ci.yml).
 
 | Ubuntu job   | Observed result                                                                                                |
 | ------------ | -------------------------------------------------------------------------------------------------------------- |
@@ -55,4 +55,4 @@ Both browser jobs installed and passed with Playwright's matching Chromium build
 
 ## Remaining limits
 
-Firefox/WebKit, all assistive technology combinations, load, live providers, multi-user authorization, interprocess concurrency, cloud deployment and power-loss durability are untested or unimplemented. Owner code/content/licensing review is pending.
+Firefox/WebKit, all assistive technology combinations, load, live providers, multi-user authorization, interprocess concurrency, cloud deployment and power-loss durability are untested or unimplemented.

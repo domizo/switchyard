@@ -38,7 +38,7 @@ npm run test:e2e       # 5 full browser workflows against the built app
 npm run demo          # writes 9 actual offline snapshots to .data/demo-cases.jsonl
 ```
 
-Browser installation is not needed to run the app. The local verification used an existing cached Chromium via `CHROMIUM_EXECUTABLE_PATH`; CI installs the matching Playwright browser in its runner. On 2026-10-09, [GitHub Actions](https://github.com/domizo/switchyard/actions/runs/37884056652) passed on Ubuntu with Node 22.17.0 and 24: 37 unit/integration tests and 5 browser workflows per version, plus the schema-drift check. [Verification evidence](docs/verification.md) separates local results from remote CI.
+Browser installation is not needed to run the app. The local verification used an existing cached Chromium via `CHROMIUM_EXECUTABLE_PATH`; CI installs the matching Playwright browser in its runner. On 2026-10-09, [GitHub Actions](https://github.com/domizo/switchyard/actions/runs/37888537230) passed on Ubuntu with Node 22.17.0 and 24: 37 unit/integration tests and 5 browser workflows per version, plus the schema-drift check. [Verification evidence](docs/verification.md) separates local results from remote CI.
 
 To evaluate a fresh exchange with the independent Fieldcheck checkout:
 
@@ -57,4 +57,4 @@ python3 -m fieldcheck fixtures/baseline.jsonl
 
 **Not implemented or verified:** live provider adapters, multi-user authentication, cloud execution, GCP/iOS integration, distributed workers, power-loss durability, accessibility across all assistive technologies, load testing or production operations. This is a scoped demo, not a production-ready claim.
 
-A project license has not been selected.
+Licensed under the [MIT License](LICENSE). Dependencies retain their own licenses.
