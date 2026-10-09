@@ -2,15 +2,15 @@
 
 Environment: macOS arm64; Node 22.17.0; npm 11.4.2. Public npm registry versions were checked during setup. TypeScript 6.0.3 was selected for compatibility with typescript-eslint's supported range. `package-lock.json` locks the installed set. No machine-wide configuration changed.
 
-| Check | Observed result |
-|---|---|
-| `npm run typecheck` | Passed |
-| `npm run lint` | Passed |
-| `npm test` | 37 tests passed in 4 files |
-| `npm run build` | Passed; client JS 323.27 kB / 98.42 kB gzip at this build |
-| `npm run test:e2e` | 5 passed |
-| `npm run demo` | 9 actual offline run snapshots exported |
-| Dependency installation audit | 0 reported npm vulnerabilities at installation time |
+| Check                         | Observed result                                           |
+| ----------------------------- | --------------------------------------------------------- |
+| `npm run typecheck`           | Passed                                                    |
+| `npm run lint`                | Passed                                                    |
+| `npm test`                    | 37 tests passed in 4 files                                |
+| `npm run build`               | Passed; client JS 323.27 kB / 98.42 kB gzip at this build |
+| `npm run test:e2e`            | 5 passed                                                  |
+| `npm run demo`                | 9 actual offline run snapshots exported                   |
+| Dependency installation audit | 0 reported npm vulnerabilities at installation time       |
 
 The restart integration test starts a real child Node server with a long fixture deadline, observes its persisted reviewing checkpoint, kills the process, starts another server, retries, approves, kills that process, starts a third server and delivers from the persisted approval. This tests process interruption, not power loss or distributed recovery.
 
@@ -20,16 +20,16 @@ The first sandbox test invocation could not bind loopback sockets (`EPERM`). The
 
 The in-app browser was used first. The automated Playwright suite then used the existing cached Chromium build 1243 with `CHROMIUM_EXECUTABLE_PATH`; no new browser was installed on this Mac. Default Playwright 1.64.0 expects build 1248, so that exact bundled browser and other engines are not locally verified. CI is configured to install its matching Chromium.
 
-| In-app browser check | Result |
-|---|---|
-| Identity | Title `Switchyard · Local release desk`, URL `http://127.0.0.1:4310/` |
-| Meaningful render / framework overlay | Content rendered; no framework error overlay |
-| Console health | No application error/warning entries on the checked screen |
-| Fallback | Atlas timeout → Cedar valid → human decision |
-| Delivery | Approve → six real files → verified bundle |
-| Version change | Completed v1 → revised v2 → old approval and download removed |
-| Error / retry | Both unavailable → explicit retry → valid round 2 |
-| Responsive | 1536 × 1045 and 390 × 844; no document horizontal overflow |
+| In-app browser check                  | Result                                                                |
+| ------------------------------------- | --------------------------------------------------------------------- |
+| Identity                              | Title `Switchyard · Local release desk`, URL `http://127.0.0.1:4310/` |
+| Meaningful render / framework overlay | Content rendered; no framework error overlay                          |
+| Console health                        | No application error/warning entries on the checked screen            |
+| Fallback                              | Atlas timeout → Cedar valid → human decision                          |
+| Delivery                              | Approve → six real files → verified bundle                            |
+| Version change                        | Completed v1 → revised v2 → old approval and download removed         |
+| Error / retry                         | Both unavailable → explicit retry → valid round 2                     |
+| Responsive                            | 1536 × 1045 and 390 × 844; no document horizontal overflow            |
 
 The in-app viewport screenshot API cropped the displayed visible surface at the larger override; full-page screenshots captured the complete layout. DOM width checks showed no document overflow. Supporting screenshots live in the parent workspace's `evidence/`, outside the Git checkout.
 
@@ -41,6 +41,18 @@ Compared the generated concept and complete browser screenshot directly: cool gr
 
 Intentional functional deviations: only actual created runs appear, avoiding the concept's decorative Ridge/Mesa examples; three evidence-linked findings are shown; measured local durations have explicit fixture context; input revision and recovery controls are added. On mobile the release rail becomes a horizontal list and the two content columns stack. The concept is a design reference, not a product screenshot.
 
+## Remote CI on 2026-10-09
+
+[GitHub Actions run 37884056652](https://github.com/domizo/switchyard/actions/runs/37884056652) passed for implementation commit `da29a9c3387b2fdea331f7f79999104865d49b27`. The private repository is owned by `domizo`. Its published tree `cf86a190f4705b49e85f846d4dace7e18ff493f5` exactly matched the verified local checkout, including both language READMEs; remote commits are a fresh, disclosed import rather than copied local history.
+
+| Ubuntu job   | Observed result                                                                                                |
+| ------------ | -------------------------------------------------------------------------------------------------------------- |
+| Node 22.17.0 | Typecheck, lint and build passed; 37 unit/integration tests; 5 Playwright workflows; 9 demo snapshots exported |
+| Node 24      | Same checks passed; 37 unit/integration tests; 5 Playwright workflows; 9 demo snapshots exported               |
+| Contract     | Generated schema matched the committed schema                                                                  |
+
+Both browser jobs installed and passed with Playwright's matching Chromium build 1248. Job conclusions and test counts were checked through the authenticated GitHub connector, including job logs. CI validates the offline implementation; it does not measure live-model quality or production performance.
+
 ## Remaining limits
 
-Remote repositories and CI have not run. CI matrix Node 24/Linux, default Playwright browser 1248, Firefox/WebKit, all assistive technology combinations, load, live providers, multi-user authorization, interprocess concurrency, cloud deployment and power-loss durability are untested or unimplemented. Owner code/content/licensing review is pending.
+Firefox/WebKit, all assistive technology combinations, load, live providers, multi-user authorization, interprocess concurrency, cloud deployment and power-loss durability are untested or unimplemented. Owner code/content/licensing review is pending.
